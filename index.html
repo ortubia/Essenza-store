@@ -3,40 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tienda Online</title>
+  <title>Essensa</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <div class="container">
-      <h1 class="logo">Mi Tienda</h1>
-      <input type="text" id="searchInput" placeholder="Buscar productos...">
-    </div>
+    <div class="logo">Essensa</div>
+    <input type="text" id="searchInput" placeholder="Buscar productos...">
   </header>
 
+  <!-- BANNER -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Descubre la Esencia del Cuidado</h1>
+      <p>Productos de alta gama para tu piel y bienestar</p>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
   <nav class="filters">
     <select id="categoryFilter">
       <option value="todos">Todas las categorías</option>
-      <option value="ropa">Ropa</option>
-      <option value="calzado">Calzado</option>
+      <option value="perfumes">Perfumes</option>
+      <option value="cuidado">Cuidado personal</option>
       <option value="accesorios">Accesorios</option>
     </select>
   </nav>
 
+  <!-- PRODUCTOS -->
   <main>
     <div id="products-container" class="product-grid"></div>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Mi Tienda. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Essensa. Todos los derechos reservados.</p>
     <div class="socials">
-      <a href="#">Facebook</a> | 
-      <a href="#">Instagram</a> | 
-      <a href="#">WhatsApp</a>
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Contacto</a>
     </div>
   </footer>
 
   <script src="app.js"></script>
 </body>
 </html>
+
