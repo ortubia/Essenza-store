@@ -4,6 +4,16 @@ const container = document.getElementById("products-container");
 const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
 
+card.innerHTML = `
+  <img src="${p.imagen}" alt="${p.nombre}" />
+  <div class="info">
+    <h3>${p.nombre}</h3>
+    <p><strong>Categoría:</strong> ${p.categoria}</p>
+    <p>${p.descripcion}</p>
+    <button onclick="agregarAlCarrito('${p.nombre}')">Agregar al carrito</button>
+  </div>
+`;
+
 // Cargar los productos desde productos.json
 fetch("productos.json")
   .then(response => response.json())
@@ -57,4 +67,46 @@ function aplicarFiltros() {
 // Eventos
 searchInput.addEventListener("input", aplicarFiltros);
 categoryFilter.addEventListener("change", aplicarFiltros);
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function agregarAlCarrito(nombre) {
+  const producto = productos.find(p => p.nombre === nombre);
+  if (producto) {
+    carrito.push(producto);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    actualizarCarritoUI();
+  }
+}
+
+function eliminarDelCarrito(index) {
+  carrito.splice(index, 1);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarCarritoUI();
+}
+
+function actualizarCarritoUI() {
+  const carritoCont = document.getElementById("carrito-items");
+  const total = document.getElementById("carrito-total");
+  carritoCont.innerHTML = "";
+
+  carrito.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.className = "carrito-item";
+    div.innerHTML = `
+      <span>${item.nombre}</span>
+      <button onclick="eliminarDelCarrito(${index})">❌</button>
+    `;
+    carritoCont.appendChild(div);
+  });
+
+  total.textContent = carrito.length;
+}
+
+// Mostrar/Ocultar panel
+function toggleCarrito() {
+  document.getElementById("carrito").classList.toggle("visible");
+}
+
+actualizarCarritoUI();
+
 
