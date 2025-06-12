@@ -14,6 +14,13 @@
     <div class="logo">Essensa</div>
     <input type="text" id="searchInput" placeholder="Buscar productos...">
   </header>
+<button id="carrito-boton" onclick="toggleCarrito()">🛒 Carrito (<span id="carrito-total">0</span>)</button>
+
+<div id="carrito" class="carrito-panel">
+  <h2>Tu Carrito</h2>
+  <div id="carrito-items"></div>
+  <button onclick="toggleCarrito()">Cerrar</button>
+</div>
 
   <!-- BANNER -->
   <section class="hero">
