@@ -4,15 +4,27 @@ const container = document.getElementById("products-container");
 const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
 
+// Cargar los productos desde productos.json
 fetch("productos.json")
-  .then(res => res.json())
+  .then(response => response.json())
   .then(data => {
     productos = data;
     renderProductos(productos);
+  })
+  .catch(error => {
+    console.error("Error cargando productos:", error);
+    container.innerHTML = "<p>Error al cargar productos.</p>";
   });
 
+// Renderizar productos en el contenedor
 function renderProductos(lista) {
   container.innerHTML = "";
+
+  if (lista.length === 0) {
+    container.innerHTML = "<p>No se encontraron productos.</p>";
+    return;
+  }
+
   lista.forEach(p => {
     const card = document.createElement("div");
     card.className = "product-card";
@@ -20,8 +32,7 @@ function renderProductos(lista) {
       <img src="${p.imagen}" alt="${p.nombre}" />
       <div class="info">
         <h3>${p.nombre}</h3>
-        <p><strong>Precio:</strong> $${p.precio}</p>
-        <p><strong>Código:</strong> ${p.codigo}</p>
+        <p><strong>Categoría:</strong> ${p.categoria}</p>
         <p>${p.descripcion}</p>
       </div>
     `;
@@ -29,6 +40,7 @@ function renderProductos(lista) {
   });
 }
 
+// Aplicar filtros por búsqueda y categoría
 function aplicarFiltros() {
   const texto = searchInput.value.toLowerCase();
   const categoria = categoryFilter.value;
@@ -42,5 +54,7 @@ function aplicarFiltros() {
   renderProductos(filtrados);
 }
 
+// Eventos
 searchInput.addEventListener("input", aplicarFiltros);
 categoryFilter.addEventListener("change", aplicarFiltros);
+
