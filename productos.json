@@ -1,23 +1,21 @@
 [
   {
-    "nombre": "Camisa Blanca",
-    "codigo": "CB001",
-    "precio": 29.99,
-    "descripcion": "Camisa blanca de algodón para uso casual o formal.",
-    "imagen": "https://via.placeholder.com/300x200.png?text=Camisa+Blanca"
+    "nombre": "Perfume Floral",
+    "categoria": "perfumes",
+    "descripcion": "Fragancia con notas florales elegantes.",
+    "imagen": "https://via.placeholder.com/300x200?text=Perfume+Floral"
   },
   {
-    "nombre": "Zapatos Negros",
-    "codigo": "ZN002",
-    "precio": 59.99,
-    "descripcion": "Zapatos de cuero negro, elegantes y cómodos.",
-    "imagen": "https://via.placeholder.com/300x200.png?text=Zapatos+Negros"
+    "nombre": "Crema Hidratante",
+    "categoria": "cuidado",
+    "descripcion": "Hidratación profunda para todo tipo de piel.",
+    "imagen": "https://via.placeholder.com/300x200?text=Crema+Hidratante"
   },
   {
-    "nombre": "Pantalón Jeans",
-    "codigo": "PJ003",
-    "precio": 39.99,
-    "descripcion": "Jeans de mezclilla azul oscuro, corte recto.",
-    "imagen": "https://via.placeholder.com/300x200.png?text=Jeans"
+    "nombre": "Bolso Minimalista",
+    "categoria": "accesorios",
+    "descripcion": "Bolso negro elegante y funcional.",
+    "imagen": "https://via.placeholder.com/300x200?text=Bolso"
   }
 ]
+
