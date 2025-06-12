@@ -1,54 +1,82 @@
+/* Tipografías: Título con Playfair Display, texto con Roboto */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f8f8;
   color: #333;
 }
 
 header {
-  background-color: #1f1f1f;
-  color: #fff;
-  padding: 1em 0;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-header .container {
+  background-color: #ffffff;
+  padding: 1em 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1em;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
-  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 1px;
 }
 
 #searchInput {
-  padding: 0.5em;
-  border: none;
-  border-radius: 4px;
+  padding: 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 20px;
   width: 200px;
 }
 
-.filters {
-  background-color: #eee;
-  padding: 1em;
+.hero {
+  background-image: url('https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 4em 2em;
+  color: #fff;
   text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+}
+
+.filters {
+  text-align: center;
+  margin: 2em 0 1em;
 }
 
 .filters select {
-  padding: 0.5em;
-  font-size: 1em;
+  padding: 0.6em 1em;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
 }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  gap: 30px;
   padding: 2em;
   max-width: 1200px;
   margin: auto;
@@ -56,19 +84,19 @@ header .container {
 
 .product-card {
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
   transition: transform 0.2s ease;
 }
 
 .product-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .product-card img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
 }
 
@@ -77,20 +105,27 @@ header .container {
 }
 
 .product-card h3 {
-  margin-top: 0;
+  margin: 0 0 0.5em;
+  font-size: 1.2rem;
+}
+
+.product-card p {
+  margin: 0.3em 0;
+  font-size: 0.95rem;
 }
 
 footer {
-  background-color: #1f1f1f;
-  color: #fff;
+  background-color: #222;
+  color: #eee;
   text-align: center;
-  padding: 1.5em 1em;
-  margin-top: 2em;
+  padding: 2em 1em;
+  margin-top: 4em;
 }
 
 footer .socials a {
   color: #fff;
-  text-decoration: none;
   margin: 0 0.5em;
+  text-decoration: none;
 }
+
 
