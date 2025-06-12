@@ -127,5 +127,55 @@ footer .socials a {
   margin: 0 0.5em;
   text-decoration: none;
 }
+#carrito-boton {
+  position: fixed;
+  top: 1.2em;
+  right: 1.2em;
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 0.6em 1em;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.carrito-panel {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  padding: 2em 1em;
+  overflow-y: auto;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.carrito-panel.visible {
+  right: 0;
+}
+
+.carrito-panel h2 {
+  margin-top: 0;
+}
+
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ddd;
+}
+
+.carrito-item button {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 1.2em;
+  cursor: pointer;
+}
 
 
