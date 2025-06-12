@@ -1,0 +1,23 @@
+[
+  {
+    "nombre": "Camisa Blanca",
+    "codigo": "CB001",
+    "precio": 29.99,
+    "descripcion": "Camisa blanca de algodón para uso casual o formal.",
+    "imagen": "https://via.placeholder.com/300x200.png?text=Camisa+Blanca"
+  },
+  {
+    "nombre": "Zapatos Negros",
+    "codigo": "ZN002",
+    "precio": 59.99,
+    "descripcion": "Zapatos de cuero negro, elegantes y cómodos.",
+    "imagen": "https://via.placeholder.com/300x200.png?text=Zapatos+Negros"
+  },
+  {
+    "nombre": "Pantalón Jeans",
+    "codigo": "PJ003",
+    "precio": 39.99,
+    "descripcion": "Jeans de mezclilla azul oscuro, corte recto.",
+    "imagen": "https://via.placeholder.com/300x200.png?text=Jeans"
+  }
+]
