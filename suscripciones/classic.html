@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESSENZA - Classic</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    .subscription-hero {
+      background-color: #f9f5f0;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .subscription-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .subscription-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    .benefits-list {
+      margin: 2rem 0;
+    }
+    
+    .benefits-list li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .benefits-list li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+    }
+    
+    .submit-button {
+      background-color: var(--color-dark);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: var(--transition);
+    }
+    
+    .submit-button:hover {
+      background-color: var(--color-accent);
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">ESSENZA</div>
+      <nav class="main-nav">
+        <a href="../../index.html">Inicio</a>
+        <a href="../../productos.html">Productos</a>
+        <a href="#" class="active">Suscripciones</a>
+        <a href="#">Sobre Nosotros</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#" class="cart-icon" aria-label="Carrito de compras">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="subscription-hero">
+      <h1>Membresía Classic</h1>
+      <p>La entrada perfecta al mundo de las fragancias exclusivas</p>
+    </section>
+
+    <div class="subscription-container">
+      <div class="subscription-form">
+        <h2>Completa tus datos</h2>
+        <p>Un asesor se pondrá en contacto contigo para finalizar la suscripción</p>
+        
+        <form id="classicSubscriptionForm">
+          <div class="form-group">
+            <label for="fullname">Nombre Completo</label>
+            <input type="text" id="fullname" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" required placeholder="Ej: 3001234567">
+          </div>
+          
+          <h3>Beneficios Incluidos:</h3>
+          <ul class="benefits-list">
+            <li>10% de descuento en todos los perfumes</li>
+            <li>2 aromas seleccionados al mes</li>
+            <li>Envío gratis en todas tus compras</li>
+            <li>Acceso a ventas privadas bimensuales</li>
+          </ul>
+          
+          <div class="form-group">
+            <label for="price">Precio:</label>
+            <input type="text" id="price" value="$35.000/mes" readonly>
+          </div>
+          
+          <button type="submit" class="submit-button">Confirmar Solicitud</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <!-- Igual que en index.html -->
+  </footer>
+
+  <script src="../../js/main.js"></script>
+  <script>
+    document.getElementById('classicSubscriptionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Gracias por tu solicitud. Un asesor de ESSENZA se pondrá en contacto contigo pronto.');
+      window.location.href = '../../index.html';
+    });
+  </script>
+</body>
+</html>
