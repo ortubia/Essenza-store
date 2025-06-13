@@ -3,128 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ESSENZA - Gestión de Productos</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>ESSENZA - Elegancia Atemporal</title>
+  <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    .admin-container {
-      max-width: 1200px;
-      margin: 2em auto;
-      padding: 2em;
-    }
-    .admin-nav {
-      display: flex;
-      margin-bottom: 2em;
-      border-bottom: 1px solid #ddd;
-    }
-    .admin-nav a {
-      padding: 1em;
-      text-decoration: none;
-      color: #333;
-      font-weight: 400;
-    }
-    .admin-nav a.active {
-      border-bottom: 2px solid #1a1a1a;
-      font-weight: 600;
-    }
-    .admin-actions {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 2em;
-    }
-    .admin-button {
-      padding: 0.8em 1.5em;
-      background: #1a1a1a;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .products-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .products-table th, .products-table td {
-      padding: 1em;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    .products-table th {
-      background: #f5f5f5;
-      font-weight: 600;
-    }
-    .action-icon {
-      margin: 0 0.5em;
-      cursor: pointer;
-    }
-  </style>
 </head>
 <body>
   <header class="main-header">
-  <div class="header-container">
-    <div class="logo">ESSENZA</div>
-    <nav class="main-nav">
-      <a href="index.html" class="nav-link active">Inicio</a>
-      <a href="productos.html" class="nav-link">Productos</a>
-      <a href="#" class="nav-link">Suscripciones</a>
-      <a href="#" class="nav-link">Sobre Nosotros</a>
-    </nav>
-    <div class="header-actions">
-      <a href="#" class="cart-icon" aria-label="Carrito de compras">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
-      </a>
+    <div class="header-container">
+      <div class="logo">ESSENZA</div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Inicio</a>
+        <a href="productos.html" class="nav-link">Productos</a>
+        <a href="#" class="nav-link">Suscripciones</a>
+        <a href="#" class="nav-link">Sobre Nosotros</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#" class="cart-icon" aria-label="Carrito de compras">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-  <div class="admin-container">
-    <h1>ESSENZA - Admin Panel</h1>
-    
-    <nav class="admin-nav">
-      <a href="productos.html" class="active">Productos</a>
-      <a href="pedidos.html">Órdenes</a>
-      <a href="#">Añadir Producto</a>
-      <a href="#">Carga Masiva</a>
-    </nav>
-    
-    <div class="admin-actions">
-      <button class="admin-button">+ Añadir Producto</button>
-      <button class="admin-button">Cargar desde Excel</button>
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Elegancia Atemporal, Espíritu Moderno</h1>
+        <p class="hero-subtitle">Descubre colecciones curadas que encarnan sofisticación y estilo.</p>
+        <a href="productos.html" class="hero-button">
+          Explorar Productos
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="featured-section">
+      <div class="section-container">
+        <h2 class="section-title">Productos Destacados</h2>
+        <div class="featured-grid" id="featured-products">
+          <!-- Productos cargados dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <section class="memberships-section">
+      <div class="section-container">
+        <h2 class="section-title">Conviértete en Miembro Essenza</h2>
+        <p class="section-subtitle">Descubre un mundo de fragancias exclusivas y beneficios pensados para ti con nuestras membresías.</p>
+        
+        <div class="membership-tiers">
+          <div class="tier-card">
+            <h3>Classic</h3>
+            <p class="tier-price">$35.000/mes</p>
+            <ul class="tier-benefits">
+              <li>10% de descuento en todos los perfumes</li>
+              <li>2 aromas seleccionados al mes</li>
+              <li>Envío gratis en todas tus compras</li>
+              <li>Acceso a ventas privadas bimensuales</li>
+            </ul>
+            <a href="suscripciones/classic.html" class="tier-button">Suscribirse</a>
+          </div>
+          
+          <div class="tier-card">
+            <h3>Privé</h3>
+            <p class="tier-price">$53.000/mes</p>
+            <ul class="tier-benefits">
+              <li>15% de descuento en todos los perfumes</li>
+              <li>3 decants de lujo al mes</li>
+              <li>Envío gratis prioritario</li>
+              <li>Acceso anticipado a lanzamientos</li>
+              <li>Regalo de cumpleaños exclusivo</li>
+            </ul>
+            <a href="suscripciones/prive.html" class="tier-button">Suscribirse</a>
+          </div>
+          
+          <div class="tier-card">
+            <h3>Elite</h3>
+            <p class="tier-price">$150.000/mes</p>
+            <ul class="tier-benefits">
+              <li>20% de descuento en todos los perfumes</li>
+              <li>1 perfume full-size exclusivo al mes</li>
+              <li>1 decantación premium al mes</li>
+              <li>Envío gratis express</li>
+              <li>Consultoría olfativa personalizada</li>
+              <li>Invitaciones a eventos VIP</li>
+            </ul>
+            <a href="suscripciones/elite.html" class="tier-button">Suscribirse</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">ESSENZA</div>
+        <p>Experimenta la elegancia atemporal con Essenza.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="#">Suscripciones</a></li>
+          <li><a href="#">Sobre Nosotros</a></li>
+          <li><a href="admin/login.html">Admin Vendedor</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>contacto@essenza.com</p>
+        <p>+57 300 123 4567</p>
+      </div>
     </div>
     
-    <table class="products-table">
-      <thead>
-        <tr>
-          <th>Imagen</th>
-          <th>Nombre</th>
-          <th>Categoría</th>
-          <th>Precio</th>
-          <th>Stock</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="https://via.placeholder.com/50x50.png?text=Perfume" alt="Producto" width="50"></td>
-          <td>Yves d'Orgeval VIP Black Men</td>
-          <td>Caballeros</td>
-          <td>$39,300.00</td>
-          <td>5</td>
-          <td>
-            <span class="action-icon">✏️</span>
-            <span class="action-icon">🗑️</span>
-          </td>
-        </tr>
-        <!-- Más filas de productos se cargarán dinámicamente -->
-      </tbody>
-    </table>
-  </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Essenza, Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-  <script src="../../js/admin.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
-
