@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Mismo head que classic.html -->
+  <style>
+    .subscription-hero {
+      background-color: #f0f4f8;
+    }
+  </style>
+</head>
+<body>
+  <!-- Mismo header que classic.html -->
+
+  <main>
+    <section class="subscription-hero">
+      <h1>Membresía Privé</h1>
+      <p>Experiencias exclusivas para conocedores</p>
+    </section>
+
+    <div class="subscription-container">
+      <div class="subscription-form">
+        <h2>Completa tus datos</h2>
+        <p>Un asesor se pondrá en contacto contigo para finalizar la suscripción</p>
+        
+        <form id="priveSubscriptionForm">
+          <!-- Mismos campos de formulario que classic.html -->
+          
+          <h3>Beneficios Incluidos:</h3>
+          <ul class="benefits-list">
+            <li>15% de descuento en todos los perfumes</li>
+            <li>3 decants de lujo al mes</li>
+            <li>Envío gratis prioritario</li>
+            <li>Acceso anticipado a lanzamientos</li>
+            <li>Regalo de cumpleaños exclusivo</li>
+          </ul>
+          
+          <div class="form-group">
+            <label for="price">Precio:</label>
+            <input type="text" id="price" value="$53.000/mes" readonly>
+          </div>
+          
+          <button type="submit" class="submit-button">Confirmar Solicitud</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Mismo footer que classic.html -->
+
+  <script>
+    document.getElementById('priveSubscriptionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Gracias por tu solicitud. Un asesor de ESSENZA se pondrá en contacto contigo pronto.');
+      window.location.href = '../../index.html';
+    });
+  </script>
+</body>
+</html>
