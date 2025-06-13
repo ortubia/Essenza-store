@@ -108,5 +108,27 @@ function toggleCarrito() {
 }
 
 actualizarCarritoUI();
+function generarPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  doc.setFontSize(16);
+  doc.text("Resumen de Pedido - Essensa", 10, 15);
+
+  doc.setFontSize(12);
+  let y = 30;
+
+  carrito.forEach((item, index) => {
+    doc.text(`${index + 1}. ${item.nombre} - ${item.categoria}`, 10, y);
+    y += 10;
+  });
+
+  if (carrito.length === 0) {
+    doc.text("Carrito vacío", 10, y);
+  }
+
+  doc.save("pedido_essensa.pdf");
+}
+
 
 
