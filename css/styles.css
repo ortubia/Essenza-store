@@ -408,3 +408,85 @@ ul {
     font-size: 2rem;
   }
 }
+/* Añadir al final del archivo styles.css */
+
+/* Estilos para páginas de suscripción */
+.subscription-hero {
+  padding: 5rem 2rem;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.subscription-hero h1 {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.subscription-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.subscription-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.subscription-form h2 {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subscription-form h3 {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+}
+
+/* Estilos para admin */
+.admin-button {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--color-dark);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.admin-button.secondary {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.admin-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive para admin */
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .admin-actions {
+    width: 100%;
+  }
+  
+  .admin-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
