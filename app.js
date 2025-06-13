@@ -123,12 +123,20 @@ function generarPDF() {
     y += 10;
   });
 
-  if (carrito.length === 0) {
-    doc.text("Carrito vacío", 10, y);
-  }
-
   doc.save("pedido_essensa.pdf");
+
+  // Guardar en pedidos del localStorage
+  const pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+  pedidos.push({
+    id: Date.now(),
+    fecha: new Date().toLocaleString(),
+    productos: [...carrito]
+  });
+  localStorage.setItem("pedidos", JSON.stringify(pedidos));
+
+  alert("Pedido guardado correctamente.");
 }
+
 
 
 
