@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESSENZA - Nuestra Colección</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">ESSENZA</div>
+    <nav class="main-nav">
+      <a href="../index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="#">Suscripciones</a>
+      <a href="#">Sobre Nosotros</a>
+    </nav>
+    <div class="header-icons">
+      <a href="#" aria-label="Carrito de compras">🛒</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="collection-header">
+      <h1>Nuestra Colección</h1>
+      <div class="filters-bar">
+        <div class="filter-group">
+          <label for="search-box">Buscar Producto</label>
+          <input type="text" id="search-box" placeholder="Escribe o selecciona un nombre...">
+        </div>
+        <div class="filter-group">
+          <label for="category-select">Categoría</label>
+          <select id="category-select">
+            <option value="todas">Todas</option>
+            <option value="Caballeros">Caballeros</option>
+            <option value="Damas">Damas</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="sort-select">Ordenar Por</label>
+          <select id="sort-select">
+            <option value="defecto">Defecto</option>
+            <option value="precio-asc">Precio: Menor a Mayor</option>
+            <option value="precio-desc">Precio: Mayor a Menor</option>
+            <option value="nombre-asc">Nombre: A-Z</option>
+            <option value="nombre-desc">Nombre: Z-A</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="products-container" class="product-grid">
+      <!-- Los productos se cargarán dinámicamente aquí -->
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Experimenta la elegancia atemporal con Essenza.</h4>
+      </div>
+      <div class="footer-section">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="#">Sobre Nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="../admin/login.html">Admin Vendedor</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Síguenos</h4>
+        <div class="social-links">
+          <a href="#">FB</a>
+          <a href="#">IG</a>
+          <a href="#">TW</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Essenza, Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script src="../js/products.js"></script>
+</body>
+</html>
