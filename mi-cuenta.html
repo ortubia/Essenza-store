@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESSENZA - Mi Cuenta</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="main-header">
+    <!-- Header común -->
+  </header>
+
+  <main class="account-container">
+    <div class="account-sidebar">
+      <div class="account-user">
+        <div class="user-avatar">JS</div>
+        <h3 class="user-name">Juan Sánchez</h3>
+        <p class="user-email">juan@example.com</p>
+      </div>
+      
+      <nav class="account-menu">
+        <a href="#dashboard" class="active">Resumen</a>
+        <a href="#orders">Mis Pedidos</a>
+        <a href="#membership">Mi Membresía</a>
+        <a href="#addresses">Direcciones</a>
+        <a href="#settings">Configuración</a>
+        <a href="#logout">Cerrar Sesión</a>
+      </nav>
+    </div>
+    
+    <div class="account-content">
+      <section id="dashboard" class="account-section active">
+        <h2>Resumen de tu cuenta</h2>
+        <div class="account-summary">
+          <div class="summary-card">
+            <h3>Membresía Actual</h3>
+            <div class="membership-status elite">
+              <p>Elite</p>
+              <span>Activa</span>
+            </div>
+          </div>
+          
+          <div class="summary-card">
+            <h3>Próximo Envío</h3>
+            <div class="next-shipment">
+              <p>15 de Julio, 2025</p>
+              <a href="#">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="orders" class="account-section">
+        <h2>Historial de Pedidos</h2>
+        <div class="orders-list" id="orders-list">
+          <!-- Pedidos cargados dinámicamente -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/account.js"></script>
+</body>
+</html>
