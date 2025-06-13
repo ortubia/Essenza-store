@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESSENZA - Gestión de Pedidos</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    .admin-container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .orders-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    
+    .orders-table th, .orders-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .orders-table th {
+      background-color: #f9f9f9;
+      font-weight: 600;
+    }
+    
+    .order-status {
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .status-pending {
+      background-color: #fff3e0;
+      color: #e65100;
+    }
+    
+    .status-processing {
+      background-color: #e3f2fd;
+      color: #1565c0;
+    }
+    
+    .status-completed {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+    }
+    
+    .status-cancelled {
+      background-color: #ffebee;
+      color: #c62828;
+    }
+    
+    .order-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .action-btn {
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    
+    .process-btn {
+      background-color: #2196f3;
+      color: white;
+      border: none;
+    }
+    
+    .complete-btn {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+    }
+    
+    .cancel-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">ESSENZA</div>
+      <nav class="main-nav">
+        <a href="../index.html">Volver al Sitio</a>
+      </nav>
+      <div class="header-actions">
+        <button id="logoutButton" class="admin-button secondary">
+          Cerrar Sesión
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="admin-container">
+    <div class="admin-header">
+      <h1 class="admin-title">Gestión de Pedidos</h1>
+      <div class="admin-actions">
+        <button class="admin-button" id="exportOrders">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
+          </svg>
+          Exportar
+        </button>
+      </div>
+    </div>
+    
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th>ID Pedido</th>
+          <th>Cliente</th>
+          <th>Fecha</th>
+          <th>Total</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="orders-list">
+        <tr>
+          <td>#ESS-10025</td>
+          <td>María González</td>
+          <td>12/06/2025</td>
+          <td>$143,700.00</td>
+          <td><span class="order-status status-processing">En Proceso</span></td>
+          <td class="order-actions">
+            <button class="action-btn complete-btn">Completar</button>
+            <button class="action-btn cancel-btn">Cancelar</button>
+          </td>
+        </tr>
+        <!-- Más pedidos se cargarían dinámicamente -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="../js/admin.js"></script>
+  <script>
+    // Lógica para manejar pedidos
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('complete-btn')) {
+        const row = e.target.closest('tr');
+        row.querySelector('.order-status').className = 'order-status status-completed';
+        row.querySelector('.order-status').textContent = 'Completado';
+        alert('Pedido marcado como completado');
+      }
+      
+      if (e.target.classList.contains('cancel-btn')) {
+        const row = e.target.closest('tr');
+        row.querySelector('.order-status').className = 'order-status status-cancelled';
+        row.querySelector('.order-status').textContent = 'Cancelado';
+        alert('Pedido marcado como cancelado');
+      }
+    });
+  </script>
+</body>
+</html>
