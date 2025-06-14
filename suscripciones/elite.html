@@ -74,7 +74,20 @@
         <p>Un asesor se pondrá en contacto contigo para finalizar la suscripción</p>
         
         <form id="eliteSubscriptionForm">
-          <!-- Mismos campos de formulario que classic.html -->
+         <div class="form-group">
+            <label for="fullname">Nombre Completo</label>
+            <input type="text" id="fullname" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" required placeholder="Ej: 3001234567">
+          </div>
           
           <h3>Beneficios Incluidos:</h3>
           <ul class="benefits-list">
