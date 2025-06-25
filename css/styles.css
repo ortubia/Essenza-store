@@ -6,7 +6,6 @@
   --color-accent: #8b5a2b;
   --color-gray: #f5f5f5;
   --color-text: #333333;
-  --color-text-light: #777777;
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
   --transition: all 0.3s ease;
@@ -23,7 +22,6 @@ body {
   font-family: var(--font-secondary);
   color: var(--color-text);
   line-height: 1.6;
-  background-color: var(--color-light);
 }
 
 a {
@@ -31,24 +29,14 @@ a {
   color: inherit;
 }
 
-ul {
-  list-style: none;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
 /* Header */
 .main-header {
-  background-color: #ffffff;
+  background-color: var(--color-light);
   padding: 1.5rem 2rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .header-container {
@@ -60,11 +48,11 @@ ul {
 }
 
 .logo {
-  color: #1a1a1a;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-primary);
   font-size: 2.2rem;
   font-weight: 700;
   letter-spacing: 1px;
+  color: var(--color-dark);
 }
 
 .main-nav {
@@ -73,17 +61,15 @@ ul {
 }
 
 .nav-link {
-  color: #333333;
-  text-decoration: none;
   font-weight: 400;
-  font-size: 1.1rem;
-  transition: color 0.3s;
-  padding: 0.5rem 0;
+  color: var(--color-text);
   position: relative;
+  padding: 0.5rem 0;
+  transition: var(--transition);
 }
 
-.nav-link:hover, .nav-link.active {
-  color: #1a1a1a;
+.nav-link.active {
+  font-weight: 600;
 }
 
 .nav-link.active:after {
@@ -93,49 +79,28 @@ ul {
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #1a1a1a;
+  background-color: var(--color-dark);
 }
 
-/* Logo y navegación */
-.logo {
-  color: white;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.main-nav {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-link {
-  color: rgba(255,255,255,0.9);
-  text-decoration: none;
-  font-weight: 400;
-  transition: color 0.3s;
-  padding: 0.5rem 0;
-}
-
-.nav-link:hover, .nav-link.active {
-  color: white;
-}
-
-/* Carrito con más margen */
 .header-actions {
   margin-left: 1rem;
 }
 
 .cart-icon {
-  color: white;
+  color: var(--color-dark);
   display: flex;
-  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
 }
 
 /* Hero Section */
 .hero {
-  padding: 5rem 2rem;
+  padding: 6rem 2rem 4rem;
   text-align: center;
 }
 
@@ -145,17 +110,17 @@ ul {
 }
 
 .hero-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-primary);
   font-size: 3rem;
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: #1a1a1a;
+  color: var(--color-dark);
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
-  color: #555555;
+  color: #555;
   margin-bottom: 2.5rem;
   max-width: 600px;
   margin-left: auto;
@@ -164,56 +129,59 @@ ul {
 
 .hero-button {
   display: inline-block;
-  background-color: #1a1a1a;
-  color: white;
+  background-color: var(--color-dark);
+  color: var(--color-light);
   padding: 0.8rem 2rem;
   border-radius: 4px;
-  text-decoration: none;
   font-weight: 400;
-  transition: background-color 0.3s;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
+  transition: var(--transition);
 }
 
 .hero-button:hover {
-  background-color: #333333;
-}
-/* Secciones comunes */
-.section-container {
-  padding: 5rem 2rem;
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
-.section-title {
+/* Productos */
+.collection-header {
+  padding: 4rem 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.collection-header h1 {
   font-family: var(--font-primary);
   font-size: 2.5rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: var(--color-dark);
+  margin-bottom: 1.5rem;
 }
 
-.section-subtitle {
-  font-size: 1.1rem;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 3rem;
-  color: var(--color-text-light);
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-/* Productos destacados */
-.featured-section {
-  background-color: var(--color-gray);
+.search-input, .category-filter {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 250px;
 }
 
-.featured-grid {
+.product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
 }
 
 .product-card {
-  background-color: var(--color-light);
+  background: white;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -247,121 +215,111 @@ ul {
   color: var(--color-dark);
 }
 
-/* Membresías */
 /* Suscripciones */
 .subscriptions-hero {
   padding: 4rem 2rem;
   text-align: center;
-  background-color: #f8f9fa;
 }
 
 .subscriptions-hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.8rem;
-  color: #0a2540;
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.subscriptions-hero p {
-  font-size: 1.2rem;
-  color: #555;
-}
-
-.subscriptions-grid {
+.subscription-tiers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   max-width: 1200px;
-  margin: 3rem auto;
-  padding: 0 2rem;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
 }
 
-.subscription-card {
+.tier-card {
   background: white;
   border-radius: 8px;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm);
   position: relative;
   border: 1px solid #eee;
 }
 
-.subscription-card.highlight {
-  border: 1px solid #0a2540;
+.tier-card.popular {
+  border: 1px solid var(--color-accent);
 }
 
 .popular-badge {
   position: absolute;
   top: -12px;
   right: 20px;
-  background: #0a2540;
+  background: var(--color-accent);
   color: white;
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 1.5rem;
   border-radius: 20px;
   font-size: 0.8rem;
 }
 
-.subscription-card h2 {
-  font-family: 'Cormorant Garamond', serif;
+.tier-card h2 {
+  font-family: var(--font-primary);
   font-size: 1.8rem;
-  color: #0a2540;
   margin-bottom: 0.5rem;
 }
 
-.subscription-card .price {
+.price {
   font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
+  font-weight: 700;
+  color: var(--color-dark);
   margin-bottom: 1.5rem;
 }
 
-.subscription-card .benefits {
+.benefits {
   list-style: none;
-  padding: 0;
   margin-bottom: 2rem;
 }
 
-.subscription-card .benefits li {
+.benefits li {
   margin-bottom: 0.8rem;
   position: relative;
   padding-left: 1.5rem;
 }
 
-.subscription-card .benefits li:before {
+.benefits li:before {
   content: "•";
   position: absolute;
   left: 0;
-  color: #0a2540;
+  color: var(--color-accent);
   font-weight: bold;
 }
 
 .subscribe-btn {
-  display: inline-block;
+  display: block;
   width: 100%;
   padding: 0.8rem;
-  background: #0a2540;
+  background: var(--color-dark);
   color: white;
   text-align: center;
-  text-decoration: none;
   border-radius: 4px;
-  transition: background 0.3s;
+  transition: var(--transition);
 }
 
 .subscribe-btn:hover {
-  background: #1a365d;
+  background: var(--color-accent);
 }
+
 /* Footer */
 .main-footer {
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  padding-top: 4rem;
+  background-color: #f9f9f9;
+  padding: 4rem 2rem 0;
 }
 
 .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 3rem;
   padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-logo {
@@ -371,138 +329,34 @@ ul {
   margin-bottom: 1rem;
 }
 
-.footer-links h4,
-.footer-contact h4 {
+.footer-links h4 {
   font-family: var(--font-primary);
   font-size: 1.4rem;
   margin-bottom: 1.5rem;
 }
 
-.footer-links ul li {
-  margin-bottom: 0.8rem;
-}
-
-.footer-links a {
-  transition: var(--transition);
-}
-
-.footer-links a:hover {
-  color: var(--color-accent);
-}
-
 .footer-bottom {
   text-align: center;
   padding: 2rem 0;
-  font-size: 0.9rem;
-  color: var(--color-text-light);
+  border-top: 1px solid #eee;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
   .main-nav {
-    gap: 1rem;
+    gap: 1.5rem;
   }
   
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .section-container {
-    padding: 3rem 1rem;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-}
-/* Añadir al final del archivo styles.css */
-
-/* Estilos para páginas de suscripción */
-.subscription-hero {
-  padding: 5rem 2rem;
-  text-align: center;
-  margin-top: 80px;
-}
-
-.subscription-hero h1 {
-  font-family: var(--font-primary);
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.subscription-container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-}
-
-.subscription-form {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
-}
-
-.subscription-form h2 {
-  font-family: var(--font-primary);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.subscription-form h3 {
-  font-family: var(--font-primary);
-  font-size: 1.5rem;
-  margin: 2rem 0 1rem;
-}
-
-/* Estilos para admin */
-.admin-button {
-  padding: 0.6rem 1.2rem;
-  background-color: var(--color-dark);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.admin-button.secondary {
-  background-color: #f5f5f5;
-  color: #333;
-  border: 1px solid #ddd;
-}
-
-.admin-button svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* Responsive para admin */
-@media (max-width: 768px) {
-  .admin-header {
+  .filters {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    align-items: center;
   }
   
-  .admin-actions {
-    width: 100%;
-  }
-  
-  .admin-button {
-    width: 100%;
-    justify-content: center;
+  .subscription-tiers {
+    grid-template-columns: 1fr;
   }
 }
