@@ -8,104 +8,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
- <header class="main-header">
-  <div class="header-container">
-    <div class="logo">ESSENZA</div>
-    <nav class="main-nav">
-      <a href="index.html" class="nav-link active">Inicio</a>
-      <a href="productos.html" class="nav-link">Productos</a>
-      <a href="suscripciones.html" class="nav-link">Suscripciones</a>
-    </nav>
-    <div class="header-actions">
-      <a href="carrito.html" class="cart-icon" aria-label="Carrito de compras">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
-      </a>
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">ESSENZA</div>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html" class="nav-link active">Productos</a>
+        <a href="suscripciones.html">Suscripciones</a>
+      </nav>
+      <div class="header-actions">
+        <a href="carrito.html" class="cart-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <main>
-    <section class="collection-hero">
-      <div class="container">
-        <h1>Nuestra Colección</h1>
-        <p>Descubre nuestras exclusivas fragancias</p>
+    <section class="collection-header">
+      <h1>Nuestra Colección</h1>
+      <div class="filters">
+        <input type="text" placeholder="Buscar productos..." class="search-input">
+        <select class="category-filter">
+          <option value="all">Todas las categorías</option>
+          <option value="Caballeros">Caballeros</option>
+          <option value="Damas">Damas</option>
+        </select>
       </div>
     </section>
 
-    <section class="filters-section">
-      <div class="container">
-        <div class="filters-grid">
-          <div class="filter-group">
-            <label for="search">Buscar</label>
-            <input type="text" id="search" placeholder="Escribe el nombre...">
-          </div>
-          
-          <div class="filter-group">
-            <label for="category">Categoría</label>
-            <select id="category">
-              <option value="all">Todas</option>
-              <option value="Caballeros">Caballeros</option>
-              <option value="Damas">Damas</option>
-              <option value="Unisex">Unisex</option>
-            </select>
-          </div>
-          
-          <div class="filter-group">
-            <label for="sort">Ordenar por</label>
-            <select id="sort">
-              <option value="default">Recomendados</option>
-              <option value="price-asc">Precio: Menor a Mayor</option>
-              <option value="price-desc">Precio: Mayor a Menor</option>
-              <option value="name-asc">Nombre: A-Z</option>
-              <option value="name-desc">Nombre: Z-A</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="products-section">
-      <div class="container">
-        <div class="products-grid" id="products-container">
-          <!-- Productos cargados dinámicamente -->
-        </div>
-      </div>
+    <section class="product-grid" id="product-grid">
+      <!-- Productos cargados dinámicamente -->
     </section>
   </main>
-
-  <footer class="main-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <div class="footer-logo">ESSENZA</div>
-        <p>Experimenta la elegancia atemporal con Essenza.</p>
-      </div>
-      
-      <div class="footer-links">
-        <h4>Enlaces Rápidos</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="productos.html">Productos</a></li>
-          <li><a href="#">Suscripciones</a></li>
-          <li><a href="#">Sobre Nosotros</a></li>
-          <li><a href="admin/login.html">Admin Vendedor</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-contact">
-        <h4>Contacto</h4>
-        <p>contacto@essenza.com</p>
-        <p>+57 300 123 4567</p>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; 2025 Essenza, Todos los derechos reservados.</p>
-    </div>
-  </footer>
 
   <script src="js/products.js"></script>
 </body>
