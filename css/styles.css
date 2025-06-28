@@ -28,7 +28,24 @@ a {
   text-decoration: none;
   color: inherit;
 }
+header {
+  background-color: #003366; /* Azul oscuro */
+  color: white;
+  padding: 15px 0;
+  width: 100%;
+}
 
+nav {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
 /* Header */
 .main-header {
   background-color: var(--color-light);
@@ -360,21 +377,4 @@ a {
     grid-template-columns: 1fr;
   }
 }
-header {
-  background-color: #003366; /* Azul oscuro */
-  color: white;
-  padding: 15px 0;
-  width: 100%;
-}
 
-nav {
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
